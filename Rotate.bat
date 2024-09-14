@@ -12,7 +12,7 @@ goto x1
 
 :x1
 set /p s=输入旋转角度：
-for %%1 in (*.png *.jpg) do ffmpeg -i %%1 -vf "format=rgba,rotate=%s%*PI/180:ow=cos(%s%*PI/180)*iw+sin(%s%*PI/180)*ih:oh=sin(%s%*PI/180)*iw+cos(%s%*PI/180)*ih:c=none" -pix_fmt rgba -y "1/%%~n1.png"
+for %%1 in (*.png *.jpg) do ffmpeg -i "%%1" -vf "format=rgba,rotate=%s%*PI/180:ow=cos(%s%*PI/180)*iw+sin(%s%*PI/180)*ih:oh=sin(%s%*PI/180)*iw+cos(%s%*PI/180)*ih:c=none" -pix_fmt rgba -y "1/%%~n1.png"
 echo 搞定~！按任意键退出！
 pause
 exit
