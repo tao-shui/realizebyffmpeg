@@ -1,5 +1,5 @@
 @echo off
-@chcp 65001
+@chcp 65001 1>nul 2>nul
 if not exist 1 (
 md 1
 ) else ( 
